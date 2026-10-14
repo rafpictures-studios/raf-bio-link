@@ -1,0 +1,75 @@
+/* ====== TABLET RESPONSIVENESS (641px - 1024px) ====== */
+@media (min-width: 641px) and (max-width: 1024px) {
+  body {
+    padding: 16px;
+  }
+
+  .container-wrapper {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .profile-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .shared-card-main,
+  .assets-card-main {
+    margin-bottom: 20px;
+  }
+
+  .shared-card-style {
+    padding: 14px;
+    font-size: 0.9rem;
+  }
+
+  .Btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .modal-content {
+    width: 85%;
+    max-width: 500px;
+  }
+
+  #youtubeModal .modal-content {
+    width: 85%;
+    max-width: 600px;
+  }
+
+  .switcher-container {
+    top: 20px;
+    right: 20px;
+  }
+
+  .home-btn,
+  .subscribe-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  button {
+    padding: 11px 18px;
+    font-size: 0.9rem;
+  }
+
+  .flex.md\:flex-row {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+  }
+  
+  #assetManagementModal .modal-content img {
+    width: 85%;
+    max-width: 85%;
+  }
+}

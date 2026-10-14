@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>RAF Pictures — 3D Render & Animation Services | Bio Links</title>
+    <meta name="description" content="RAF Pictures - Professional 3D Rendering, Animation & Procedural Environment services. Free Blender addons, assets, and online courses. Open for commission work.">
+    <meta name="keywords" content="3D render, animation, blender, procedural environment, RAF Pictures, renderfarm, 3D assets, blender addon">
+    <meta name="author" content="RAF Pictures">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="RAF Pictures — 3D Render & Animation Services">
+    <meta property="og:description" content="Professional 3D Rendering & Animation services. Free Blender addons, assets, and online courses.">
+    <meta property="og:image" content="assets/images/branding/logo_black.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="RAF Pictures">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RAF Pictures — 3D Render & Animation Services">
+    <meta name="twitter:description" content="Professional 3D Rendering & Animation services. Free Blender addons, assets, and online courses.">
+    <meta name="twitter:image" content="assets/images/branding/logo_black.png">
+    
+    <!-- Performance: Preconnect to external resources -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://formspree.io">
+    <link rel="dns-prefetch" href="https://www.youtube.com">
+    <link rel="dns-prefetch" href="https://api.whatsapp.com">
+    
+    <script src="https://cdn.tailwindcss.com"></script>   
+ 
+    <!-- CSS Modular -->
+    <link rel="stylesheet" href="css/core/tokens.css?v=2">
+    <link rel="stylesheet" href="css/core/main.css?v=2">
+    <link rel="stylesheet" href="css/core/animation.css?v=2">
+    <link rel="stylesheet" href="css/components/button.css?v=2">
+    <link rel="stylesheet" href="css/components/modal.css?v=6">
+    <link rel="stylesheet" href="css/responsive/mobile.css?v=2">
+    <link rel="stylesheet" href="css/responsive/tablet.css?v=2">
+    <link rel="stylesheet" href="css/responsive/desktop.css?v=2">
+
+    <!-- ICON -->
+    <link rel="icon" type="image/png" href="assets/icons/web-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    </style>
+</head>
+<body class="p-4 flex flex-col items-center justify-start">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="three-body">
+            <div class="three-body__dot"></div>
+            <div class="three-body__dot"></div>
+            <div class="three-body__dot"></div>
+        </div>
+    </div>
+
+    <div id="main-content" class="hidden w-full flex-grow flex flex-col justify-between items-center">
+        <div class="container-wrapper w-full max-w-xl mx-auto text-center">
+            <div class="flex justify-between items-center mb-2">
+                <button id="subscribeBtn" class="subscribe-btn" aria-label="Subscribe" title="Subscribe">
+                    <svg viewBox="0 0 448 512" class="bell" aria-hidden="true" focusable="false">
+                        <path d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"></path>
+                    </svg>
+                </button>
+                
+                <!-- Language Switcher & Toggle Night Mode -->
+                <div class="flex items-center gap-2">
+                    <!-- Language Switcher -->
+                    <div class="language-switcher">
+                        <button id="languageBtn" class="language-btn" aria-label="Change Language" title="Change Language">
+                            <img id="currentLangFlag" src="assets/icons/us.png" alt="Language" class="language-flag-img">
+                        </button>
+                        <div id="languageDropdown" class="language-dropdown">
+                            <button class="language-option" data-lang="en">
+                                <img src="assets/icons/us.png" alt="English" class="flag-icon">
+                                <span>English</span>
+                            </button>
+                            <button class="language-option" data-lang="id">
+                                <img src="assets/icons/id.png" alt="Indonesia" class="flag-icon">
+                                <span>Indonesia</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Toggle Night Mode -->
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input id="darkModeToggle" class="sr-only peer" type="checkbox" />
+                        <div
+                            class="toggle-track-glass w-16 h-8 rounded-full ring-0 peer duration-500 outline-none overflow-hidden 
+                                   before:flex before:items-center before:justify-center after:flex after:items-center after:justify-center 
+                                   before:content-['☀️'] before:absolute before:h-6 before:w-6 before:top-1/2 before:bg-white before:rounded-full before:left-1 before:-translate-y-1/2 before:transition-all before:duration-700 peer-checked:before:opacity-0 peer-checked:before:rotate-90 peer-checked:before:-translate-y-full 
+                                   after:content-['🌑'] after:absolute after:bg-[#1d1d1d] after:rounded-full after:top-[4px] after:right-1 after:translate-y-full after:w-6 after:h-6 after:opacity-0 after:transition-all after:duration-700 peer-checked:after:opacity-100 peer-checked:after:rotate-180 peer-checked:after:translate-y-0"
+                        ></div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- COURSE DISCOUNT MODAL -->
+            <div id="courseModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" role="dialog" aria-modal="true" aria-labelledby="courseModalTitle">
+                <div class="modal-content p-6 rounded-lg shadow-lg w-full max-w-md relative">
+                    <button id="closeCourseModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800" aria-label="Close course modal">
+                        ✕
+                    </button>
+                
+                    <div class="flex flex-col items-center text-center">
+                        <h2 class="text-xl font-semibold mb-4 text-gray-800" id="courseModalTitle" data-i18n="modal_course_title">Procedural Environment Course Discount</h2>
+                        <img src="assets/images/thumbnails/course.webp" alt="Procedural Environment Course" class="w-32 h-44 object-cover rounded-lg mb-4" loading="lazy">
+                        <p class="text-gray-600 mb-6" data-i18n="modal_course_desc">Copy the code and visit the store to claim your discount</p>
+                        <div class="discount-container">
+                            <input type="text" id="discountCodeInput" class="discount-code" value="DEVATA" readonly aria-label="Discount code">
+                            <button type="button" onclick="copyCode()" class="copy-btn">
+                                <span id="copyBtnText">Copy</span>
+                            </button>
+                        </div>
+                        <a href="https://academy.devatastudio.com/kursus/procedural-environment" target="_blank" rel="noopener noreferrer" class="modal-action-btn group relative inline-flex w-full h-12 items-center justify-center overflow-hidden rounded-lg bg-black px-6 font-medium text-white transition-all duration-300 hover:bg-gray-800 mt-4">
+                            <span data-i18n="modal_store_btn">Go to store</span>
+                            <div class="w-0 translate-x-[100%] pl-0 opacity-0 transition-all duration-200 group-hover:w-5 group-hover:translate-x-0 group-hover:pl-2 group-hover:opacity-100">
+                                <svg width="10" height="10" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5">
+                                    <path d="M6 2L6 3L12.292 3L2.292 13L3 13.707L13 3.707L13 10L14 10L14 2L6 2Z" fill="currentColor"></path>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUBSCRIBE MODAL -->
+            <div id="subscribeModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" role="dialog" aria-modal="true" aria-labelledby="subscribeModalTitle">
+                <div class="modal-content p-6 rounded-lg shadow-lg w-full max-w-md relative flex flex-col items-center text-center">
+                    <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800" aria-label="Close subscribe modal">
+                        ✕
+                    </button>
+                  
+                    <img id="modalProfileImage" src="assets/images/branding/logo_black.png" alt="RAF Pictures Logo" class="w-12 h-12 mb-4" loading="lazy">
+                  
+                    <h2 id="subscribeModalTitle" class="text-xl font-semibold mb-2 text-gray-800" data-i18n="modal_subscribe_title">Subscribe to rafpictures</h2>
+                    <p class="mb-4 text-sm text-gray-600" data-i18n="modal_subscribe_desc">Stay up to date with everything important.</p>
+                  
+                    <form id="subscribeForm" action="https://formspree.io/f/xzzanrzk" method="POST" class="w-full space-y-4" aria-label="Subscribe form">
+                        <input type="email" name="email" placeholder="Email" required autocomplete="email"
+                               class="modal-input w-full p-3 border-2 border-gray-300 rounded-md focus:outline-none focus:border-black"
+                               aria-label="Email address" aria-required="true">
+                        <button type="submit" class="modal-action-btn group relative inline-flex w-full h-12 items-center justify-center overflow-hidden rounded-lg bg-black px-6 font-medium text-white transition-all duration-300 hover:bg-gray-800">
+                            <span class="button-text" data-i18n="modal_subscribe_btn">Subscribe</span>
+                            <div class="w-0 translate-x-[100%] pl-0 opacity-0 transition-all duration-200 group-hover:w-5 group-hover:translate-x-0 group-hover:pl-2 group-hover:opacity-100">
+                                <i class="fa-solid fa-bell"></i>
+                            </div>
+                            <div class="three-body center hidden">
+                                <div class="three-body__dot"></div>
+                                <div class="three-body__dot"></div>
+                                <div class="three-body__dot"></div>
+                            </div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- PORTOFOLIO MODAL -->
+            <div id="portfolioModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" role="dialog" aria-modal="true" aria-label="Portfolio viewer">
+                <div class="modal-content p-6 rounded-lg shadow-lg w-full max-w-2xl relative">
+                    <button id="closePortfolioModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800" aria-label="Close portfolio modal">
+                        ✕
+                    </button>
+                    <!-- Loading indicator -->
+                    <div id="portfolioLoading" class="modal-body flex flex-col justify-center items-center w-full h-64">
+                        <div class="three-body mb-4">
+                            <div class="three-body__dot"></div>
+                            <div class="three-body__dot"></div>
+                            <div class="three-body__dot"></div>
+                        </div>
+                        <p class="text-gray-900 dark:text-gray-100" data-i18n="portfolio_loading">Loading portfolio...</p>
+                    </div>
+                    <!-- Portfolio iframe (lazy loaded) -->
+                    <div class="modal-body flex justify-center items-center w-full hidden">
+                        <iframe
+                            id="portfolioIframe"
+                            allowfullscreen
+                            allow="clipboard-write"
+                            scrolling="no"
+                            data-src="https://heyzine.com/flip-book/bc527cb058.html"
+                            style="border: 0px; width: 584px; height: 346px;">
+                        </iframe>
+                    </div>
+                </div>
+            </div>            
+
+            <!-- GET IN TOUCH / COMMISSION FORM MODAL -->
+            <div id="commissionModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" role="dialog" aria-modal="true" aria-labelledby="commissionModalTitle">
+                <div class="modal-content p-6 rounded-lg shadow-lg w-full max-w-md relative flex flex-col items-center text-center">
+                    <button id="closeCommissionModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800" aria-label="Close commission modal">
+                        ✕
+                    </button>
+                
+                    <h2 id="commissionModalTitle" class="text-2xl font-bold mb-2" data-i18n="modal_commission_title">Open Commission</h2>
+                    <p class="mb-4 text-sm" data-i18n="modal_commission_desc">Send me a message for work inquiries.</p>
+                
+                    <form id="commissionForm" action="https://formspree.io/f/mrbyejwq" method="POST" class="w-full space-y-4">
+                        
+                        <!-- Name -->
+                        <div class="relative z-0 w-full group">
+                            <i class="fa-solid fa-user absolute start-0 bottom-3 text-gray-500 dark:text-gray-400" aria-hidden="true"></i>
+                            <input type="text" name="name" id="nameInput" class="form-float-input ps-8" placeholder=" " required autocomplete="name" aria-required="true" />
+                            <label for="nameInput" class="form-float-label peer-placeholder-shown:start-8 peer-focus:start-0" data-i18n="form_name">Name</label>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="relative z-0 w-full group">
+                            <i class="fa-solid fa-envelope absolute start-0 bottom-3 text-gray-500 dark:text-gray-400" aria-hidden="true"></i>
+                            <input type="email" name="email" id="emailInput" class="form-float-input ps-8" placeholder=" " required autocomplete="email" aria-required="true" />
+                            <label for="emailInput" class="form-float-label peer-placeholder-shown:start-8 peer-focus:start-0" data-i18n="form_email">Email</label>
+                        </div>
+                        
+                        <!-- Phone Number -->
+                        <div class="relative z-0 w-full group">
+                            <i class="fa-solid fa-phone absolute start-0 bottom-3 text-gray-500 dark:text-gray-400" aria-hidden="true"></i>
+                            <input 
+                                type="tel" 
+                                name="phone_number" 
+                                id="phoneInput" 
+                                class="form-float-input ps-8" 
+                                placeholder=" " 
+                                required 
+                                inputmode="numeric" 
+                                pattern="[0-9]*" 
+                                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                                autocomplete="tel"
+                                aria-required="true"
+                            />
+                            <label for="phoneInput" class="form-float-label peer-placeholder-shown:start-8 peer-focus:start-0" data-i18n="form_phone">Phone</label>
+                        </div>
+
+                        <!-- Message -->
+                        <div class="relative z-0 w-full group">
+                            <textarea name="message" id="messageInput" rows="4" class="form-float-input resize-none" placeholder=" " required aria-required="true" aria-label="Project description"></textarea>
+                            <label for="messageInput" class="form-float-label peer-placeholder-shown:start-0 peer-focus:start-0" data-i18n="form_message">Describe your project here...</label>
+                        </div>
+                        <button type="submit" class="modal-action-btn group relative inline-flex w-full h-12 items-center justify-center overflow-hidden rounded-lg bg-black px-6 font-medium text-white transition-all duration-300 hover:bg-gray-800">
+                            <span class="button-text" data-i18n="modal_commission_btn">Send</span>
+                            <div class="w-0 translate-x-[100%] pl-0 opacity-0 transition-all duration-200 group-hover:w-5 group-hover:translate-x-0 group-hover:pl-2 group-hover:opacity-100">
+                                <i class="fa-regular fa-message"></i>
+                            </div>
+                            <div class="three-body center hidden">
+                                <div class="three-body__dot"></div>
+                                <div class="three-body__dot"></div>
+                                <div class="three-body__dot"></div>
+                            </div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- YOUTUBE VIDEO MODAL -->
+            <!-- Video Preview Modal (Step 1) -->
+            <div id="videoPreviewModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" role="dialog" aria-modal="true" aria-label="Video preview">
+                <div class="modal-content p-6 rounded-lg shadow-lg relative">
+                    <button id="closePreviewModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 z-10" aria-label="Close preview">
+                        ✕
+                    </button>
+                    <div class="modal-body flex flex-col items-center">
+                        <img id="previewGif" src="" alt="Video Preview" class="w-full max-w-md rounded-lg mb-4" loading="lazy">
+                        <h2 id="previewTitle" class="text-xl font-bold mb-2 text-center">Video Title</h2>
+                        <p id="previewDescription" class="text-sm text-gray-600 mb-4 text-center max-w-md">Video description goes here.</p>
+                        <button id="watchFullButton" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg flex items-center gap-2 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                            <span data-i18n="video_watch_full">Watch Full Video</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- YouTube Fullscreen Modal (Step 2) -->
+            <div id="youtubeModal" class="hidden fixed inset-0 bg-black flex items-center justify-center z-[60]" role="dialog" aria-modal="true" aria-label="YouTube video player">
+                <button id="closeYoutubeModal" class="absolute top-4 right-4 text-white hover:text-gray-300 z-10 text-3xl" aria-label="Close video modal">
+                    ✕
+                </button>
+                <div class="w-full h-full flex items-center justify-center">
+                    <iframe 
+                        id="youtubeIframe"
+                        class="w-full h-full"
+                        src=""
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- ASSET MANAGEMENT MODAL -->
+            <div id="assetManagementModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" role="dialog" aria-modal="true" aria-labelledby="assetManagementModalTitle">
+                <div class="modal-content p-6 rounded-lg shadow-lg w-full max-w-md relative flex flex-col items-center text-center">
+                    <button id="closeAssetManagementModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800" aria-label="Close asset management modal">
+                        ✕
+                    </button>
+                
+                    <h2 id="assetManagementModalTitle" class="text-xl font-semibold mb-4 text-gray-800" data-i18n="modal_asset_title">Blender Asset Management Addon</h2>
+                    <picture class="flex justify-center mb-4">
+                        <source srcset="assets/images/thumbnails/asset-management.webp" type="image/webp">
+                        <img src="assets/images/thumbnails/asset-management.png" alt="Blender Asset Management Addon" class="w-full h-auto object-cover rounded-lg" loading="lazy">
+                    </picture>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed" data-i18n="modal_asset_desc">Organize and manage your 3D assets efficiently in Blender.</p>
+                    
+                    <div class="w-full space-y-3">
+                        <a href="https://alfajririzqi.gumroad.com/l/asset-management" target="_blank" rel="noopener noreferrer" class="modal-action-btn group relative inline-flex w-full h-12 items-center justify-center overflow-hidden rounded-lg bg-black px-6 font-medium text-white transition-all duration-300 hover:bg-gray-800">
+                            <span data-i18n="modal_download_btn">Free Download</span>
+                            <div class="w-0 translate-x-[100%] pl-0 opacity-0 transition-all duration-200 group-hover:w-5 group-hover:translate-x-0 group-hover:pl-2 group-hover:opacity-100">
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </div>
+                        </a>
+                        
+                        <a href="https://docs-asset-management.vercel.app" target="_blank" rel="noopener noreferrer" class="modal-action-btn group relative inline-flex w-full h-12 items-center justify-center overflow-hidden rounded-lg bg-gray-100 px-6 font-medium text-gray-800 transition-all duration-300 hover:bg-gray-200">
+                            <span data-i18n="modal_doc_btn">Documentation</span>
+                            <div class="w-0 translate-x-[100%] pl-0 opacity-0 transition-all duration-200 group-hover:w-5 group-hover:translate-x-0 group-hover:pl-2 group-hover:opacity-100">
+                                <i class="fa-solid fa-book"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile header -->
+            <div class="flex flex-col items-center mb-6">
+                <img id="profileImage" src="assets/images/branding/logo_black.png" alt="RAF Pictures - Professional 3D Render & Animation Services" class="profile-img w-24 h-24 rounded-full object-cover mb-4" loading="eager">
+                <h1 class="text-3xl font-bold text-gray-800 mb-1">RAF Pictures</h1>
+                <p class="text-gray-600" data-i18n="profile_subtitle">3D Render & Animation</p>
+            </div>
+
+            <!-- Social icons -->
+            <nav aria-label="Social media links" class="flex flex-wrap justify-center gap-x-3 gap-y-4 my-6">
+                <!-- WhatsApp -->
+                <a href="https://api.whatsapp.com/send?phone=6289513170863" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="">
+                    <button class="Btn bg-whatsapp">
+                        <span class="svgContainer">
+                            <i class="fa-brands fa-whatsapp" style="color:white;font-size:1.44em"></i>
+                        </span>
+                        <span class="BG"></span>
+                    </button>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/rizqyalfajri" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="">
+                    <button class="Btn bg-instagram">
+                        <span class="svgContainer">
+                            <i class="fa-brands fa-instagram" style="color:white;font-size:1.44em"></i>
+                        </span>
+                        <span class="BG"></span>
+                    </button>
+                </a>
+                <!-- Email -->
+                <a href="mailto:alfajririzqi@gmail.com" aria-label="Email" class="">
+                    <button class="Btn bg-email">
+                        <span class="svgContainer">
+                            <i class="fa-solid fa-envelope" style="color:white;font-size:1.44em"></i>
+                        </span>
+                        <span class="BG"></span>
+                    </button>
+                </a>
+                <!-- YouTube -->
+                <a href="https://youtube.com/@rafpictures_studios" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="">
+                    <button class="Btn bg-youtube">
+                        <span class="svgContainer">
+                            <i class="fa-brands fa-youtube" style="color:white;font-size:1.44em"></i>
+                        </span>
+                        <span class="BG"></span>
+                    </button>
+                </a>
+            </nav>
+      
+            <!-- Bio -->
+            <div class="mb-6 flex justify-center">
+                <label for="filter" class="switch" aria-label="Toggle Filter">
+                    <input type="checkbox" id="filter" />
+                    <span data-i18n="switch_links">Links</span>
+                    <span data-i18n="switch_assets">Assets</span>
+                </label>
+            </div>
+
+            <!-- LINKS SECTION -->
+            <div class="shared-card-main space-y-4">
+                <p class="section-title" data-i18n="section_course">Course</p>
+                <a href="#" id="courseModalLink" class="shared-card-style block py-4 hover:scale-98 transform transition-all">
+                    <picture>
+                        <source srcset="assets/images/thumbnails/course.webp" type="image/webp">
+                        <img src="assets/images/thumbnails/course.png" alt="Procedural Environment Course" class="inline-block w-10 h-10 mr-10" loading="lazy" width="40" height="40">
+                    </picture>
+                    <div class="card-text-content">
+                        <h3 class="font-semibold text-base" data-i18n="card_course_title">Procedural Environment Course</h3>
+                        <p class="text-sm text-gray-600"><img src="assets/images/thumbnails/devata-academy.png" alt="Devata Academy" class="inline w-4 h-4 mr-2" loading="lazy" width="16" height="16"><span data-i18n="card_course_desc">Devata Academy</span></p> 
+                    </div>
+                </a>
+                <p class="section-title" data-i18n="section_services">Services</p>
+                <a href="#" id="commissionModalLink" class="shared-card-style block py-4 hover:scale-98 transform transition-all">
+                    <img src="assets/images/thumbnails/commission.png" alt="Open Commission for 3D Work" class="inline-block w-10 h-10 mr-10" loading="lazy" width="40" height="40">
+                    <div class="card-text-content">
+                       <h3 class="font-semibold text-base" data-i18n="card_commission_title">Open Commission/Work</h3>
+                    </div>
+                </a>
+                <a href="./renderfarm.html" class="shared-card-style block py-4 hover:scale-98 transform transition-all">
+                    <img src="assets/images/thumbnails/render.png" alt="Renderfarm Services" class="inline-block w-10 h-10 mr-10" loading="lazy" width="40" height="40">
+                    <div class="card-text-content">
+                        <h3 class="font-semibold text-base" data-i18n="card_renderfarm_title">Renderfarm Services</h3>
+                    </div>
+                </a>
+
+                <!-- WORKS -->
+                <p class="section-title" data-i18n="section_works">Showcase</p>
+                <a href="#" class="shared-card-style block py-4 hover:scale-98 transform transition-all youtube-modal-trigger" data-video-id="wuZnM5o-zMM">
+                    <picture>
+                        <source srcset="assets/images/thumbnails/boboiboy-baraju_ep6.webp" type="image/webp">
+                        <img src="assets/images/thumbnails/boboiboy-baraju_ep6.jpg" alt="EP06 - BoBoiBoy Galaxy Baraju" class="inline-block w-10 h-10 mr-10 object-cover" loading="lazy" width="40" height="40">
+                    </picture>
+                    <div class="card-text-content">
+                        <h3 class="font-semibold text-base" data-i18n="card_baraju_ep6">EP06 - BoBoiBoy Galaxy Baraju</h3>
+                        <p class="text-sm text-gray-600"><i class="fab fa-youtube text-red-600 mr-1"></i><span data-i18n="card_youtube_desc">YouTube</span> - Monsta</p>
+                    </div>
+                </a>
+                <a href="#" class="shared-card-style block py-4 hover:scale-98 transform transition-all youtube-modal-trigger" data-video-id="OTQDuKtemzc">
+                    <picture>
+                        <source srcset="assets/images/thumbnails/boboiboy-baraju_ep5.webp" type="image/webp">
+                        <img src="assets/images/thumbnails/boboiboy-baraju_ep5.jpg" alt="EP05 - BoBoiBoy Galaxy Baraju" class="inline-block w-10 h-10 mr-10 object-cover" loading="lazy" width="40" height="40">
+                    </picture>
+                    <div class="card-text-content">
+                        <h3 class="font-semibold text-base" data-i18n="card_baraju_ep5">EP05 - BoBoiBoy Galaxy Baraju</h3>
+                        <p class="text-sm text-gray-600"><i class="fab fa-youtube text-red-600 mr-1"></i><span data-i18n="card_youtube_desc">YouTube</span> - Monsta</p>
+                    </div>
+                </a>
+                <a href="#" class="shared-card-style block py-4 hover:scale-98 transform transition-all youtube-modal-trigger" data-video-id="6sbUuHw0Y-4">
+                    <img src="assets/images/thumbnails/jumbo-trailer.jpg" alt="JUMBO Official Trailer 1 - Visinema Pictures" class="inline-block w-10 h-10 mr-10 object-cover" loading="lazy" width="40" height="40">
+                    <div class="card-text-content">
+                        <h3 class="font-semibold text-base" data-i18n="card_jumbo_trailer">OFFICIAL TRAILER 1 JUMBO</h3>
+                        <p class="text-sm text-gray-600"><i class="fab fa-youtube text-red-600 mr-1"></i><span data-i18n="card_youtube_desc">YouTube</span> Visinema Pictures</p>
+                    </div>
+                </a>
+                <a href="#" class="shared-card-style block py-4 hover:scale-98 transform transition-all youtube-modal-trigger" data-video-id="YW3sQ16oksY">
+                    <img src="assets/images/thumbnails/jumbo-teaser.jpg" alt="JUMBO Official Teaser Trailer - Visinema Pictures" class="inline-block w-10 h-10 mr-10 object-cover" loading="lazy" width="40" height="40">
+                    <div class="card-text-content">
+                        <h3 class="font-semibold text-base" data-i18n="card_jumbo_teaser">OFFICIAL TEASER TRAILER JUMBO</h3>
+                        <p class="text-sm text-gray-600"><i class="fab fa-youtube text-red-600 mr-1"></i><span data-i18n="card_youtube_desc">YouTube</span> - Visinema Pictures</p>
+                    </div>
+                </a>
+                <a href="#" class="shared-card-style block py-4 hover:scale-98 transform transition-all youtube-modal-trigger" data-video-id="7a1wSjZyi5I">
+                    <img src="assets/images/thumbnails/nussa-mooi.jpg" alt="Episode Spesial Nussa x Mooi - Rayakan Kebaikan" class="inline-block w-10 h-10 mr-10 object-cover" loading="lazy" width="40" height="40">
+                    <div class="card-text-content">
+                        <h3 class="font-semibold text-base" data-i18n="card_nussa_mooi">EPISODE SPESIAL NUSSA x MOOI</h3>
+                        <p class="text-sm text-gray-600"><i class="fab fa-youtube text-red-600 mr-1"></i><span data-i18n="card_youtube_desc">YouTube</span> - NussaOfficial</p>
+                    </div>
+                </a>
+                <a href="#" class="shared-card-style block py-4 hover:scale-98 transform transition-all youtube-modal-trigger" data-video-id="PfIuJwcl60E">
+                    <img src="assets/images/thumbnails/nussa-movie.jpg" alt="NUSSA Short Movie Special Edition" class="inline-block w-10 h-10 mr-10 object-cover" loading="lazy" width="40" height="40">
+                    <div class="card-text-content">
+                        <h3 class="font-semibold text-base" data-i18n="card_nussa_movie">NUSSA SHORT MOVIE SPECIAL EDITION</h3>
+                        <p class="text-sm text-gray-600"><i class="fab fa-youtube text-red-600 mr-1"></i><span data-i18n="card_youtube_desc">YouTube</span> - NussaOfficial</p>
+                    </div>
+                </a>
+
+                <!-- CREATIVE PORTFOLIO -->
+                <p class="section-title" data-i18n="section_portfolio">Portofolio</p>
+                <a href="#" id="portfolioModalLink" class="shared-card-style block py-4 hover:scale-98 transform transition-all">
+                    <img src="assets/images/thumbnails/creativity.png" alt="Creative Portfolio - 3D Works" class="inline-block w-10 h-10 mr-10 object-cover" loading="lazy" width="40" height="40">
+                    <div class="card-text-content">
+                        <h3 class="font-bold text-base" data-i18n="card_portfolio_title">Creative Portfolio</h3>
+                    </div>
+                </a>
+            </div>
+
+            <!-- ASSETS SECTION (HIDDEN BY DEFAULT) -->
+            <div class="assets-card-main space-y-4 hidden">
+              <p class="section-title" data-i18n="section_course">Course</p>
+              <a href="https://drive.google.com/drive/folders/1pRcWw5EPw0sAE_vSnuQPNUh9dDik7LaR?usp=drive_link" download class="shared-card-style block py-4 hover:scale-98 transform transition-all">
+                <picture>
+                    <source srcset="assets/images/thumbnails/asset-course-pack.webp" type="image/webp">
+                    <img src="assets/images/thumbnails/asset-course-pack.png" alt="Asset Course Pack - Free Download" class="inline-block w-10 h-10 mr-10" loading="lazy" width="40" height="40">
+                </picture>
+                <div class="card-text-content">
+                  <h3 class="font-semibold text-base inline-flex items-center gap-3">
+                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                      <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/>
+                      <path d="M7 8h10M7 12h10M7 16h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+                    </svg>
+                    <span data-i18n="card_asset_pack_title">Asset Course Pack</span>
+                  </h3>
+                  <p class="text-sm text-gray-600" data-i18n="card_asset_pack_desc">Free Gobos Sequence, Trees & Plants assets (366MB)</p>
+                </div>
+              </a>
+          
+              <p class="section-title" data-i18n="section_assets">Assets</p>
+              <a href="https://drive.google.com/drive/folders/1gI6pJ1s64hN6Kem8rTv4qhYPTBciFohW?usp=drive_link" download class="shared-card-style block py-4 hover:scale-98 transform transition-all">
+                <picture>
+                    <source srcset="assets/images/thumbnails/line-art.webp" type="image/webp">
+                    <img src="assets/images/thumbnails/line-art.png" alt="LineArt Assets Pack - Free Download" class="inline-block w-10 h-10 mr-10" loading="lazy" width="40" height="40">
+                </picture>
+                <div class="card-text-content">
+                  <h3 class="font-semibold text-base inline-flex items-center gap-3">
+                    <svg class="w-5 h-5 text-gray-700 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                      <path d="M3 21l3-1 11-11 1-3L16 3 5 14 3 21z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="currentColor" fill-opacity="0.06"/>
+                      <path d="M14 6l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span data-i18n="card_lineart_title">LineArt Assets Pack</span>
+                  </h3>
+                  <p class="text-sm text-gray-600" data-i18n="card_lineart_desc">Free Dot-Highlight & Shadow-Line (100KB)</p>
+                </div>
+              </a>
+          
+              <a href="https://alfajririzqi.gumroad.com/l/cyberpunk_jakarta" download class="shared-card-style block py-4 hover:scale-98 transform transition-all">
+                <picture>
+                    <source srcset="assets/images/thumbnails/kitbash-cyberpunk.webp" type="image/webp">
+                    <img src="assets/images/thumbnails/kitbash-cyberpunk.png" alt="Kitbash Cyberpunk Jakarta City - Free 3D Assets" class="inline-block w-10 h-10 mr-10" loading="lazy" width="40" height="40">
+                </picture>
+                <div class="card-text-content">
+                  <h3 class="font-semibold text-base inline-flex items-center gap-3">
+                    <svg class="w-5 h-5 text-indigo-600 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                      <rect x="2" y="8" width="4" height="10" stroke="currentColor" stroke-width="1.5" rx="0.5"/>
+                      <rect x="8" y="4" width="3" height="14" stroke="currentColor" stroke-width="1.5" rx="0.5"/>
+                      <rect x="13" y="10" width="3" height="8" stroke="currentColor" stroke-width="1.5" rx="0.5"/>
+                      <path d="M19 6v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <span data-i18n="card_kitbash_title">Kitbash Cyberpunk Jakarta City</span>
+                  </h3>
+                  <p class="text-sm text-gray-600" data-i18n="card_kitbash_desc">Free 8 Cyberpunk Cityscapes Asset Jakarta Series (229MB)</p>
+                </div>
+              </a>
+            </div>
+        </div>
+
+        <!-- GREETING MODAL -->
+        <div id="greetingModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" role="dialog" aria-modal="true" aria-labelledby="greetingModalTitle">
+            <div class="modal-content p-6 rounded-lg shadow-lg w-full relative flex flex-col items-center text-center">
+                <button id="closeGreetingModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800" aria-label="Close greeting modal">
+                    ✕
+                </button>
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-check text-green-500 text-3xl"></i>
+                </div>
+                <h2 id="greetingModalTitle" class="text-2xl font-bold mb-2 text-gray-800" data-i18n="greeting_thanks">Thank You!</h2>
+                <p id="greetingModalMessage" class="mb-6 text-gray-600">Your submission has been received.</p>
+                <button type="button" class="modal-action-btn group relative inline-flex w-full h-12 items-center justify-center overflow-hidden rounded-lg bg-black px-6 font-medium text-white transition-all duration-300 hover:bg-gray-800" onclick="document.getElementById('greetingModal').classList.add('hidden')">
+                    <span data-i18n="greeting_close">Close</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 RAF Pictures. <span data-i18n="footer_rights">All rights reserved.</span></p>
+        </footer>
+    </div>
+
+    <!-- Modular JavaScript -->
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/language.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+    // Simple copy function (W3Schools style)
+    function copyCode() {
+      var copyText = document.getElementById('discountCodeInput');
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(copyText.value);
+      
+      var btn = document.getElementById('copyBtnText');
+      btn.textContent = 'Copied!';
+      setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+    }
+    </script>
+</body>
+</html>
