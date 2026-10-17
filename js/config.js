@@ -24,7 +24,6 @@ const CONFIG = {
 
       // Hero
       hero_title: 'Tools, courses and assets for building 3D worlds in Blender.',
-      hero_lead: 'By Rizki Alfajri, Lead Asset Artist at Visinema Studios.',
       btn_commission: 'Open commission',
 
       // Tabs
