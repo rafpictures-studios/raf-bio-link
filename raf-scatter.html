@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAF Scatter: coming soon</title>
+  <meta name="description" content="RAF Scatter, an ecosystem scattering add-on for Blender by Rizki Alfajri. Coming soon. Join the waitlist.">
+  <meta name="keywords" content="3D render, animation, blender, procedural environment, RAF Pictures, 3D assets, blender addon">
+  <meta name="author" content="RAF Pictures">
+
+  <meta property="og:title" content="RAF Scatter: coming soon">
+  <meta property="og:description" content="RAF Scatter, an ecosystem scattering add-on for Blender by Rizki Alfajri. Coming soon. Join the waitlist.">
+  <meta property="og:image" content="assets/images/branding/logo_black.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RAF Pictures">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="RAF Scatter: coming soon">
+  <meta name="twitter:description" content="RAF Scatter, an ecosystem scattering add-on for Blender by Rizki Alfajri. Coming soon. Join the waitlist.">
+  <meta name="twitter:image" content="assets/images/branding/logo_black.png">
+  <meta name="theme-color" content="#111111">
+
+  <!-- Theme before first paint: saved choice, else the OS setting (dark by default) -->
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+
+  <link rel="icon" type="image/png" href="assets/icons/web-icon.png">
+
+  <link rel="preload" href="assets/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css?v=6">
+  <link rel="stylesheet" href="css/icons.css?v=6">
+  <link rel="stylesheet" href="css/tokens.css?v=6">
+  <link rel="stylesheet" href="css/main.css?v=6">
+</head>
+<body>
+  <a class="sr-only" href="#main">Skip to content</a>
+
+  <!-- Desktop: floating sidebar card -->
+  <aside class="sidebar" aria-label="Site">
+    <div class="sidebar-inner">
+      <a class="brand" href="index.html">
+          <span class="logo-tile"><img src="assets/icons/web-icon.png" alt="" width="22" height="22"></span>
+          <span class="brand-text">
+            <span class="brand-name">RAF Pictures</span>
+            <span class="brand-sub" data-i18n="brand_sub">3D environments and Blender tools</span>
+          </span>
+      </a>
+      <nav class="nav" aria-label="Pages">
+            <div class="nav-group">
+              <p class="nav-label" data-i18n="nav_pages">Pages</p>
+              <a class="nav-item" href="index.html#links" data-nav="links"><i class="ph ph-link-simple" aria-hidden="true"></i><span data-i18n="nav_links">Links</span></a>
+              <a class="nav-item" href="index.html#assets" data-nav="assets"><i class="ph ph-package" aria-hidden="true"></i><span data-i18n="nav_assets">Free assets</span></a>
+              <a class="nav-item" href="raf-scatter.html" aria-current="page"><span class="raf-logo" aria-hidden="true"></span><span>RAF Scatter</span><span class="nav-badge">Soon</span></a>
+            </div>
+            <div class="nav-group">
+              <p class="nav-label" data-i18n="nav_elsewhere">Elsewhere</p>
+              <a class="nav-item nav-item--sm" href="https://rizkialfajri.vercel.app" target="_blank" rel="noopener noreferrer"><i class="ph ph-paint-brush-broad" aria-hidden="true"></i>Portfolio<i class="ph ph-arrow-up-right ext" aria-hidden="true"></i></a>
+              <a class="nav-item nav-item--sm" href="https://api.whatsapp.com/send?phone=6289513170863" target="_blank" rel="noopener noreferrer"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>WhatsApp<i class="ph ph-arrow-up-right ext" aria-hidden="true"></i></a>
+              <a class="nav-item nav-item--sm" href="https://www.instagram.com/rizqyalfajri" target="_blank" rel="noopener noreferrer"><i class="ph ph-instagram-logo" aria-hidden="true"></i>Instagram<i class="ph ph-arrow-up-right ext" aria-hidden="true"></i></a>
+              <a class="nav-item nav-item--sm" href="https://youtube.com/@rafpictures_studios" target="_blank" rel="noopener noreferrer"><i class="ph ph-youtube-logo" aria-hidden="true"></i>YouTube<i class="ph ph-arrow-up-right ext" aria-hidden="true"></i></a>
+              <a class="nav-item nav-item--sm" href="mailto:alfajririzqi@gmail.com"><i class="ph ph-envelope-simple" aria-hidden="true"></i>Email<i class="ph ph-arrow-up-right ext" aria-hidden="true"></i></a>
+            </div>
+          </nav>
+      <div class="sidebar-foot">
+        <button type="button" class="btn btn--block" data-open="subscribeModal"><i class="ph ph-bell" aria-hidden="true"></i><span data-i18n="subscribe">Subscribe</span></button>
+        <div class="controls">
+            <button type="button" class="icon-btn theme-btn" data-i18n-label="theme" aria-label="Switch theme" title="Theme">
+              <i class="ph ph-sun" aria-hidden="true"></i><i class="ph ph-moon" aria-hidden="true"></i>
+            </button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Mobile: top bar card -->
+  <header class="topbar">
+    <div class="topbar-row">
+      <a class="brand" href="index.html">
+          <span class="logo-tile"><img src="assets/icons/web-icon.png" alt="" width="22" height="22"></span>
+          <span class="brand-text">
+            <span class="brand-name">RAF Pictures</span>
+            <span class="brand-sub" data-i18n="brand_sub">3D environments and Blender tools</span>
+          </span>
+      </a>
+      <div class="controls">
+            <button type="button" class="icon-btn theme-btn" data-i18n-label="theme" aria-label="Switch theme" title="Theme">
+              <i class="ph ph-sun" aria-hidden="true"></i><i class="ph ph-moon" aria-hidden="true"></i>
+            </button>
+        <button type="button" class="btn menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu"><i class="ph ph-list" aria-hidden="true"></i><span class="menu-label" data-i18n="menu">Menu</span></button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <nav class="nav" aria-label="Pages">
+            <div class="nav-group">
+              <p class="nav-label" data-i18n="nav_pages">Pages</p>
+              <a class="nav-item" href="index.html#links" data-nav="links"><i class="ph ph-link-simple" aria-hidden="true"></i><span data-i18n="nav_links">Links</span></a>
+              <a class="nav-item" href="index.html#assets" data-nav="assets"><i class="ph ph-package" aria-hidden="true"></i><span data-i18n="nav_assets">Free assets</span></a>
+              <a class="nav-item" href="raf-scatter.html" aria-current="page"><span class="raf-logo" aria-hidden="true"></span><span>RAF Scatter</span><span class="nav-badge">Soon</span></a>
+            </div>
+            <div class="nav-group">
+              <p class="nav-label" data-i18n="nav_elsewhere">Elsewhere</p>
+              <a class="nav-item nav-item--sm" href="https://rizkialfajri.vercel.app" target="_blank" rel="noopener noreferrer"><i class="ph ph-paint-brush-broad" aria-hidden="true"></i>Portfolio<i class="ph ph-arrow-up-right ext" aria-hidden="true"></i></a>
+              <a class="nav-item nav-item--sm" href="https://api.whatsapp.com/send?phone=6289513170863" target="_blank" rel="noopener noreferrer"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i>WhatsApp<i class="ph ph-arrow-up-right ext" aria-hidden="true"></i></a>
+              <a class="nav-item nav-item--sm" href="https://www.instagram.com/rizqyalfajri" target="_blank" rel="noopener noreferrer"><i class="ph ph-instagram-logo" aria-hidden="true"></i>Instagram<i class="ph ph-arrow-up-right ext" aria-hidden="true"></i></a>
+              <a class="nav-item nav-item--sm" href="https://youtube.com/@rafpictures_studios" target="_blank" rel="noopener noreferrer"><i class="ph ph-youtube-logo" aria-hidden="true"></i>YouTube<i class="ph ph-arrow-up-right ext" aria-hidden="true"></i></a>
+              <a class="nav-item nav-item--sm" href="mailto:alfajririzqi@gmail.com"><i class="ph ph-envelope-simple" aria-hidden="true"></i>Email<i class="ph ph-arrow-up-right ext" aria-hidden="true"></i></a>
+            </div>
+          </nav>
+      <button type="button" class="btn" data-open="subscribeModal"><i class="ph ph-bell" aria-hidden="true"></i><span data-i18n="subscribe">Subscribe</span></button>
+    </div>
+  </header>
+
+  <main class="main" id="main">
+    <div class="content">
+
+      <section class="hero teaser-hero">
+        <a class="back-link reveal" style="--i:0" href="index.html"><i class="ph ph-arrow-left" aria-hidden="true"></i>Back to links</a>
+        <div class="teaser-mark reveal" style="--i:0"><span class="raf-logo" aria-hidden="true"></span></div>
+        <span class="tag tag--plain reveal" style="--i:1">Coming soon</span>
+        <h1 class="reveal" style="--i:1">RAF Scatter</h1>
+        <p class="lead reveal" style="--i:2">Ecosystem scattering for Blender. Paint plants, rocks and anything else onto your ground by hand, or let it grow on its own.</p>
+        <div class="actions reveal" style="--i:3">
+          <button type="button" class="btn btn--primary" data-open="subscribeModal" data-interest="raf-scatter"><i class="ph ph-bell" aria-hidden="true"></i><span>Join the waitlist</span></button>
+        </div>
+      </section>
+
+      <figure class="teaser-media reveal" style="--i:4">
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/raf-scatter/raf-scatter-poster.jpg" aria-label="RAF Scatter painting on a ground in Blender">
+          <source src="assets/raf-scatter/raf-scatter-teaser.webm" type="video/webm">
+          <source src="assets/raf-scatter/raf-scatter-teaser.mp4" type="video/mp4">
+        </video>
+      </figure>
+
+      <section class="section reveal" style="--i:5" aria-labelledby="h-peek">
+        <div class="section-head"><h2 id="h-peek">A first look</h2></div>
+        <div class="peek">
+          <div class="cell">
+            <span class="well"><i class="ph ph-paint-brush-broad" aria-hidden="true"></i></span>
+            <h3>Paint it by hand</h3>
+            <p>Brush scatter straight onto the ground, right in the viewport.</p>
+          </div>
+          <div class="cell">
+            <span class="well"><i class="ph ph-tree-evergreen" aria-hidden="true"></i></span>
+            <h3>Or let it grow</h3>
+            <p>Spread a whole ecosystem procedurally, then shape it with masks.</p>
+          </div>
+          <div class="cell">
+            <span class="well"><i class="ph ph-package" aria-hidden="true"></i></span>
+            <h3>Save it as a biome</h3>
+            <p>Keep a setup as a reusable biome and share it as a single pack.</p>
+          </div>
+        </div>
+        <ul class="facts">
+          <li>Free add-on</li>
+          <li>Blender 4.5 and newer</li>
+          <li>Windows, macOS and Linux</li>
+        </ul>
+      </section>
+
+      <section class="section reveal" style="--i:6" aria-labelledby="h-biomes">
+        <div class="section-head"><h2 id="h-biomes">Biome asset store</h2></div>
+        <div class="cta">
+          <div>
+            <h3>Ready-made biomes, later</h3>
+            <p>Biome packs for RAF Scatter will follow after the launch.</p>
+          </div>
+          <button type="button" class="btn" data-open="subscribeModal" data-interest="biome-store"><i class="ph ph-bell" aria-hidden="true"></i><span>Notify me</span></button>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>&copy; <span data-year>2026</span> RAF Pictures. <span data-i18n="footer_rights">All rights reserved.</span></p>
+        <div class="footer-links">
+          <a href="https://www.instagram.com/rizqyalfajri" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://youtube.com/@rafpictures_studios" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="mailto:alfajririzqi@gmail.com">Email</a>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <!-- Subscribe -->
+  <dialog class="modal" id="subscribeModal" aria-labelledby="subscribeTitle">
+    <div class="modal-body">
+      <button type="button" class="icon-btn modal-close" data-close data-i18n-label="close" aria-label="Close"><i class="ph ph-x" aria-hidden="true"></i></button>
+      <div class="modal-head">
+        <h2 id="subscribeTitle" data-i18n="modal_subscribe_title">Subscribe to rafpictures</h2>
+        <p id="subscribeDesc" data-i18n="modal_subscribe_desc">Stay up to date with everything important.</p>
+      </div>
+      <form class="form" action="/api/subscribe" method="POST" data-form="subscribe" novalidate>
+        <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <input type="hidden" name="_t" value="">
+        <input type="hidden" name="interest" value="">
+        <div class="field">
+          <label for="subEmail" data-i18n="form_email">Email</label>
+          <input class="input" type="email" id="subEmail" name="email" placeholder="you@example.com" required autocomplete="email">
+        </div>
+        <p class="form-status" role="alert" hidden></p>
+        <button type="submit" class="btn btn--primary btn--block"><span data-i18n="subscribe">Subscribe</span><i class="ph ph-arrow-right" aria-hidden="true"></i></button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Thank you -->
+  <dialog class="modal" id="doneModal" aria-labelledby="doneTitle">
+    <div class="modal-body">
+      <button type="button" class="icon-btn modal-close" data-close data-i18n-label="close" aria-label="Close"><i class="ph ph-x" aria-hidden="true"></i></button>
+      <span class="done-mark"><i class="ph ph-check" aria-hidden="true"></i></span>
+      <div class="modal-head">
+        <h2 id="doneTitle" data-i18n="done_title">Thank you</h2>
+        <p id="doneMessage">Your message has been sent.</p>
+      </div>
+      <button type="button" class="btn btn--block" data-close><span data-i18n="close">Close</span></button>
+    </div>
+  </dialog>
+
+  <script src="js/config.js?v=6"></script>
+  <script src="js/app.js?v=6"></script>
+</body>
+</html>

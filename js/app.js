@@ -1,6 +1,6 @@
 /* ============================================
  * Shared app: storage, language, theme, menu, tabs, dialogs, forms, video, portfolio
- * Used by index.html and renderfarm.html.
+ * Used by index.html.
  * ============================================ */
 
 const Store = {
@@ -20,8 +20,8 @@ const Lang = {
   current: 'en',
 
   init() {
-    const saved = Store.get('language');
-    this.set(saved === 'id' ? 'id' : 'en', false);
+    // English only (the Indonesian strings were removed)
+    this.set('en', false);
     $$('[data-lang]').forEach((btn) => {
       btn.addEventListener('click', () => this.set(btn.dataset.lang, true));
     });
@@ -251,8 +251,32 @@ const Forms = {
     this.stamp(form);
     form.closest('dialog')?.close();
     const msg = $('#doneMessage');
-    if (msg) msg.textContent = Lang.t(form.dataset.form === 'subscribe' ? 'done_subscribe' : 'done_commission');
+    const interest = form.querySelector('input[name="interest"]');
+    const doneKey = form.dataset.form !== 'subscribe' ? 'done_commission'
+      : (interest && interest.value ? 'done_waitlist' : 'done_subscribe');
+    if (msg) msg.textContent = Lang.t(doneKey);
     setTimeout(() => Modal.open('doneModal'), 120);
+  }
+};
+
+/* ---------- Waitlists: coming soon cards reuse the subscribe form ---------- */
+const Waitlist = {
+  init() {
+    const modal = $('#subscribeModal');
+    if (!modal) return;
+    const field = $('input[name="interest"]', modal);
+    const title = $('#subscribeTitle');
+    const desc = $('#subscribeDesc');
+    const setTo = (interest) => {
+      if (field) field.value = interest || '';
+      title.dataset.i18n = interest ? `wait_${interest}_title` : 'modal_subscribe_title';
+      desc.dataset.i18n = interest ? `wait_${interest}_desc` : 'modal_subscribe_desc';
+      title.textContent = Lang.t(title.dataset.i18n);
+      desc.textContent = Lang.t(desc.dataset.i18n);
+    };
+    $$('[data-open="subscribeModal"]').forEach((el) => {
+      el.addEventListener('click', () => setTo(el.dataset.interest));
+    });
   }
 };
 
@@ -349,6 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
   Tabs.init();
   Modal.init();
   Forms.init();
+  Waitlist.init();
   Video.init();
   Portfolio.init();
   Copy.init();

@@ -20,11 +20,14 @@
 .ph.ph-paint-brush-broad:before { content: "\e590"; }
 .ph.ph-paper-plane-tilt:before { content: "\e398"; }
 .ph.ph-play:before { content: "\e3d0"; }
+.ph.ph-puzzle-piece:before { content: "\e596"; }
+.ph.ph-storefront:before { content: "\e470"; }
 .ph.ph-sun:before { content: "\e472"; }
 .ph.ph-tag:before { content: "\e478"; }
+.ph.ph-tree-evergreen:before { content: "\e6dc"; }
 .ph.ph-whatsapp-logo:before { content: "\e5d0"; }
 .ph.ph-x:before { content: "\e4f6"; }
 .ph.ph-youtube-logo:before { content: "\e4fc"; }
-@font-face { font-family: "Phosphor-Fill"; src: url("../assets/fonts/phosphor-fill.woff2") format("woff2"); font-weight: normal; font-style: normal; font-display: block; }
+
 .ph-fill { font-family: "Phosphor-Fill" !important; speak: never; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; display: inline-block; }
 .ph-fill.ph-play:before { content: "\e3d0"; }

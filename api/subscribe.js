@@ -2,7 +2,7 @@
  * POST /api/subscribe
  * Subscribe form. Sends you one notification email per new subscriber.
  * Tip: in Gmail, filter subject "New subscriber" into a label to keep the list in one place.
- * Body (JSON): { email, website (honeypot), _t (form open time), lang }
+ * Body (JSON): { email, interest (optional: raf-scatter | biome-store), website (honeypot), _t (form open time), lang }
  */
 import {
   send, readBody, originAllowed, clientIp, rateLimited, looksLikeBot,
@@ -31,20 +31,23 @@ export default async function handler(req, res) {
   if (!isEmail(email)) return send(res, 422, { ok: false, error: 'invalid' });
 
   const time = jakartaTime();
+  // Waitlists share this endpoint; the subject says which one so Gmail filters stay simple.
+  const LISTS = { 'raf-scatter': 'RAF Scatter waitlist', 'biome-store': 'Biome store waitlist' };
+  const list = LISTS[body.interest] || 'New subscriber';
 
   try {
     await sendMail({
-      subject: `New subscriber: ${email}`,
+      subject: `${list}: ${email}`,
       replyTo: email,
-      text: `New subscriber\n\nEmail: ${email}\nLanguage: ${lang}\nTime: ${time}\n`,
+      text: `${list}\n\nEmail: ${email}\nLanguage: ${lang}\nTime: ${time}\n`,
       html: emailHtml(
-        'New subscriber',
+        list,
         [
           ['Email', `<a href="mailto:${escapeHtml(email)}" style="color:#141414">${escapeHtml(email)}</a>`],
           ['Language', escapeHtml(lang)],
           ['Time', escapeHtml(time)]
         ],
-        'Sent from the subscribe form on your bio link.'
+        list === 'New subscriber' ? 'Sent from the subscribe form on your bio link.' : 'Sent from a coming soon card on your bio link.'
       )
     });
     return send(res, 200, { ok: true });

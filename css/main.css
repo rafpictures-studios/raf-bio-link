@@ -1594,3 +1594,54 @@ td:first-child {
   font-size: var(--text-sm);
   line-height: 1.5;
 }
+
+/* Vertical list of feature cards (coming soon) */
+.stack { display: grid; gap: 0.75rem; }
+
+/* ---------- RAF Scatter logo (mask, so it takes the text color in both themes) ---------- */
+.raf-logo {
+  display: inline-block; width: 1em; height: 1em; flex: none;
+  background: currentColor;
+  -webkit-mask: url("../assets/raf-scatter/raf-scatter-logo.png") center / contain no-repeat;
+          mask: url("../assets/raf-scatter/raf-scatter-logo.png") center / contain no-repeat;
+}
+.nav-item .raf-logo { width: 1.05rem; height: 1.05rem; }
+.feature--icon .well .raf-logo { width: 2rem; height: 2rem; transition: transform 200ms var(--ease); }
+.feature--icon:hover .well .raf-logo { transform: translateY(-2px); }
+.nav-badge {
+  margin-left: auto; font-size: 0.7rem; line-height: 1; padding: 0.25rem 0.4rem;
+  border-radius: 6px; border: 1px solid var(--line); color: var(--text-2);
+}
+
+/* ---------- RAF Scatter teaser page ---------- */
+.back-link {
+  display: inline-flex; align-items: center; gap: 0.4rem; width: fit-content;
+  font-size: 0.875rem; color: var(--text-2); margin-bottom: 1.5rem;
+}
+.back-link:hover { color: var(--text); }
+.teaser-hero .tag { width: fit-content; }
+.teaser-mark {
+  width: 4.5rem; height: 4.5rem; border-radius: 12px; display: grid; place-items: center;
+  background: var(--well); color: #f2f2f2; margin-bottom: 1rem;
+  border: 1px solid var(--line);
+}
+.teaser-mark .raf-logo { width: 2.6rem; height: 2.6rem; }
+.teaser-media {
+  margin: 0 0 2.5rem; border-radius: 12px; overflow: hidden;
+  border: 1px solid var(--line); background: var(--well); aspect-ratio: 1600 / 938;
+}
+.teaser-media video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.peek { display: grid; gap: 0.75rem; grid-template-columns: 1fr; }
+@media (min-width: 48rem) { .peek { grid-template-columns: repeat(3, 1fr); } }
+.peek .cell { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.peek .cell .well {
+  width: 2.5rem; height: 2.5rem; display: grid; place-items: center; border-radius: 8px;
+  background: var(--well); color: #f2f2f2; font-size: 1.2rem; margin-bottom: 0.5rem;
+}
+.peek .cell h3 { font-size: 1rem; margin: 0; }
+.peek .cell p { margin: 0; color: var(--text-2); font-size: 0.9rem; }
+.facts { list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.facts li {
+  font-size: 0.8rem; padding: 0.35rem 0.6rem; border-radius: 6px;
+  border: 1px solid var(--line); color: var(--text-2);
+}
